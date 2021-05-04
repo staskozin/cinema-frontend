@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import style from './Button.scss';
+import s from './Button.scss';
 
 export default function Button(props) {
   return (
-    <button className={style.button} onClick={props.callback}>{props.text}</button>
+    <button className={s.button} onClick={props.callback}>{props.text}</button>
   );
 }

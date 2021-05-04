@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import style from './Movie.scss';
+import s from './Movie.scss';
 
+import Poster from './Poster.jsx';
 import Button from './Button.jsx';
 
 function beautifyDate(timestamp) {
@@ -13,17 +14,14 @@ function beautifyDate(timestamp) {
 export default function Movie(props) {
   const m = props.data;
   return (
-    <div className={style.movie}>
-      <img src={m.poster} alt={`Постер фильма ${m.movie_name}`} />
-      <img
-        className={style.age}
-        width={50}
-        height={50}
-        src={`img/icon/${m.age_restriction}.svg`}
-        alt={`${m.age_restriction}+`}
+    <div className={s.movie}>
+      <Poster
+        movie_name={m.movie_name}
+        poster={m.poster}
+        age_restriction={m.age_restriction}
       />
-      <h2>{m.movie_name}</h2>
-      <ul>
+      <h2 className={s.movie__name}>{m.movie_name}</h2>
+      <ul className={s.movie__description}>
         <li>{m.genre}</li>
         <li>продолжительность — {m.duration.substring(0, 5)}</li>
         <li>в кино с {beautifyDate(m.premiere_date)}</li>
