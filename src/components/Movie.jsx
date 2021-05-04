@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import s from './Movie.scss';
 
-import Poster from './Poster.jsx';
-import Button from './Button.jsx';
+import Poster from './Poster';
+import Button from './Button';
 
 function beautifyDate(timestamp) {
   const date = new Date(timestamp);
