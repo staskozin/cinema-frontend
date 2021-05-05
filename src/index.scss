@@ -33,3 +33,15 @@ a {
   text-decoration: none;
   color: #e94435;
 }
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 64px;
+  }
+}
