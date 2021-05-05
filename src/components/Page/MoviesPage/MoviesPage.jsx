@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import s from './MoviesPage.scss';
+
 import Movie from './Movie';
 
 export default function MoviesPage(props) {
@@ -14,7 +16,9 @@ export default function MoviesPage(props) {
   return (
     <div className="movies">
       <h1>Сейчас в кино</h1>
-      {movies.map(m => <Movie data={m} key={m.movie_id} />)}
+      <div className={s.wrap}>
+        {movies.map(m => <Movie data={m} key={m.movie_id} />)}
+      </div>
     </div>
   );
 }
