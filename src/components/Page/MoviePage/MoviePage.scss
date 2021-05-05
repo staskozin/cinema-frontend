@@ -1,4 +1,5 @@
-.description {
+.description,
+.fact {
   line-height: 27px;
   margin: 0;
 }
@@ -7,4 +8,12 @@
   font-weight: 900;
   font-size: 24px;
   margin: 24px 0 8px 0;
+}
+
+.fact {
+  margin: 16px 0;
+
+  span {
+    font-weight: 700;
+  }
 }
