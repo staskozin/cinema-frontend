@@ -6,11 +6,7 @@ import s from './Movie.scss';
 import Poster from '../../Poster';
 import Button from '../../Button';
 
-function beautifyDate(timestamp) {
-  const date = new Date(timestamp);
-  let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-  return `${date.getDate()} ${months[date.getMonth()]}`
-}
+import { beautifyDate } from '../../../lib/dates';
 
 export default function Movie(props) {
   const m = props.data;
@@ -24,7 +20,7 @@ export default function Movie(props) {
         />
       </Link>
       <h2 className={s.movie__name}>
-        <Link to={`/movie/${m.movie_id}`} dangerouslySetInnerHTML={{'__html': `${m.movie_name}`}}></Link>
+        <Link to={`/movie/${m.movie_id}`} dangerouslySetInnerHTML={{ '__html': `${m.movie_name}` }}></Link>
       </h2>
       <ul className={s.movie__description}>
         <li>{m.genre}</li>
