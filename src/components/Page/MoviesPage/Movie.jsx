@@ -24,7 +24,7 @@ export default function Movie(props) {
         />
       </Link>
       <h2 className={s.movie__name}>
-        <Link to={`/movie/${m.movie_id}`}>{m.movie_name}</Link>
+        <Link to={`/movie/${m.movie_id}`} dangerouslySetInnerHTML={{'__html': `${m.movie_name}`}}></Link>
       </h2>
       <ul className={s.movie__description}>
         <li>{m.genre}</li>
