@@ -4,7 +4,7 @@ import s from './MoviePage.scss';
 
 import Poster from '../../Poster';
 
-import { beautifyDate } from '../../../lib/dates';
+import { beautifyDate, beaufifyTime } from '../../../lib/dates';
 
 export default function MoviePage(props) {
   const [m, setMovie] = useState({});
@@ -26,7 +26,7 @@ export default function MoviePage(props) {
       <h2 className={s.header}>Описание</h2>
       <p className={s.description} dangerouslySetInnerHTML={{__html: `${m.description}`}}></p>
       <p className={s.fact}><span>Жанр: </span>{m.genre}</p>
-      <p className={s.fact}><span>Продолжительность: </span>{m.duration?.substring(0, 5)}</p>
+      <p className={s.fact}><span>Продолжительность: </span>{beaufifyTime(m.duration)}</p>
       <p className={s.fact}><span>Премьера: </span>{beautifyDate(m.premiere_date, true)}</p>
       <p className={s.fact}><span>Режиссёр: </span>{m.director}</p>
       <p className={s.fact}><span>Страна: </span>{m.country}</p>

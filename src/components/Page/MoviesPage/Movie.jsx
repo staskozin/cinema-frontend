@@ -6,7 +6,7 @@ import s from './Movie.scss';
 import Poster from '../../Poster';
 import Button from '../../Button';
 
-import { beautifyDate } from '../../../lib/dates';
+import { beautifyDate, beaufifyTime } from '../../../lib/dates';
 
 export default function Movie(props) {
   const m = props.data;
@@ -24,7 +24,7 @@ export default function Movie(props) {
       </h2>
       <ul className={s.movie__description}>
         <li>{m.genre}</li>
-        <li>продолжительность — {m.duration.substring(0, 5)}</li>
+        <li>продолжительность — {beaufifyTime(m.duration)}</li>
         <li>в кино с {beautifyDate(m.premiere_date)}</li>
       </ul>
       <Link to={`/movie/${m.movie_id}`}>
