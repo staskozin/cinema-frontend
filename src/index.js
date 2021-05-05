@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 
 import Header from './components/Header/Header';
-import MoviesPage from './components/MoviesPage';
-import MoviePage from './components/MoviePage';
+import MoviesPage from './components/Page/MoviesPage/MoviesPage';
+import MoviePage from './components/Page/MoviePage/MoviePage';
 
 import 'normalize.css';
 import './index.scss';

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import s from './Movie.scss';
 
-import Poster from './Poster';
-import Button from './Button';
+import Poster from '../../Poster';
+import Button from '../../Button';
 
 function beautifyDate(timestamp) {
   const date = new Date(timestamp);
