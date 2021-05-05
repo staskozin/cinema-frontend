@@ -24,3 +24,27 @@
 .selected {
   color: #e5e5e5;
 }
+
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    &__link {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: normal;
+
+    &__logo {
+      margin-right: 48px;
+    }
+  }
+}
