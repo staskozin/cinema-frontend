@@ -1,16 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 import Header from './components/Header/Header';
-import Movies from './components/Movies';
+import MoviesPage from './components/MoviesPage';
 
 import 'normalize.css';
 import './index.scss';
 
 ReactDOM.render(
-  <>
+  <Router>
     <Header />
-    <Movies />
-  </>,
+    <Switch>
+      <Route path="/contacts">
+        <h1>Как добраться</h1>
+      </Route>
+      <Route path="/">
+        <MoviesPage />
+      </Route>
+    </Switch>
+  </Router>,
   document.getElementById('app')
 );

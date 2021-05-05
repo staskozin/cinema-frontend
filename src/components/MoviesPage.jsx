@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Movie from './Movie';
 
-export default function Movies(props) {
+export default function MoviesPage(props) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {

@@ -6,6 +6,10 @@
     font-weight: 900;
     margin: 0 0 8px 0;
     text-shadow: 0px 0px 23px rgba(233, 68, 53, 0.8);
+
+    a {
+      color: #e94435 !important;
+    }
   }
 
   &__link {
@@ -15,4 +19,8 @@
       margin-left: 0;
     }
   }
+}
+
+.selected {
+  color: #e5e5e5;
 }
