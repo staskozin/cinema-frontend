@@ -10,8 +10,8 @@ export default function Poster(props) {
       <div className={s.poster__agewrap}>
         <img
           className={s.poster__age}
-          width={50}
-          height={50}
+          width={40}
+          height={40}
           src={`/img/icon/${age_restriction}.svg`}
           alt={`${age_restriction}+`}
         />
