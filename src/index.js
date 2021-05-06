@@ -9,6 +9,7 @@ import {
 import Header from './components/Header/Header';
 import MoviesPage from './components/Page/MoviesPage/MoviesPage';
 import MoviePage from './components/Page/MoviePage/MoviePage';
+import Footer from './components/Footer/Footer';
 
 import 'normalize.css';
 import './index.scss';
@@ -25,6 +26,7 @@ ReactDOM.render(
         <MoviesPage />
       </Route>
     </Switch>
+    <Footer />
   </Router>,
   document.getElementById('app')
 );
