@@ -9,6 +9,7 @@ module.exports = {
     compress: true,
     port: 9000,
     watchContentBase: true,
-    progress: true
+    progress: true,
+    historyApiFallback: true,
   }
 };
