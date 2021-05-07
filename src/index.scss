@@ -41,6 +41,10 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
+  body > div {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
   h1 {
     font-size: 64px;
   }
