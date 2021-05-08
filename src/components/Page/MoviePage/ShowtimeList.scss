@@ -4,8 +4,37 @@
   margin: 24px 0;
 }
 
-.dayheader {
-  font-weight: 700;
-  font-size: 18px;
-  margin: 24px 0 8px 0;
+.day {
+  &__header {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 24px 0 8px 0;
+  }
+
+  &__times {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__showtime {
+    width: 132px;
+    margin-right: 18px;
+    margin-bottom: 16px;
+    color: #7e7e7e;
+
+    &_link {
+      .day__time {
+        color: #E94435;
+      }
+    }
+  }
+
+  &__time {
+    font-size: 48px;
+    margin: 0;
+  }
+
+  &__price {
+    color: #e5e5e5;
+  }
 }
