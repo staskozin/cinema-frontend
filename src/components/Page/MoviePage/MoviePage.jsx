@@ -26,13 +26,15 @@ export default function MoviePage(props) {
         age_restriction={m.age_restriction}
       />
       <ShowtimeList movie_id={props.match.params.movie_id} />
-      <h2 className={s.header}>Описание</h2>
-      <p className={s.description} dangerouslySetInnerHTML={{ __html: `${m.description}` }}></p>
-      <p className={s.fact}><span>Жанр: </span>{m.genre}</p>
-      <p className={s.fact}><span>Продолжительность: </span>{beautifyTime(m.duration)}</p>
-      <p className={s.fact}><span>Премьера: </span>{beautifyDate(date, true)}</p>
-      <p className={s.fact}><span>Режиссёр: </span>{m.director}</p>
-      <p className={s.fact}><span>Страна: </span>{m.country}</p>
+      <div className={s.descriptionwrap}>
+        <h2 className={s.header}>Описание</h2>
+        <p className={s.description} dangerouslySetInnerHTML={{ __html: `${m.description}` }}></p>
+        <p className={s.fact}><span>Жанр: </span>{m.genre}</p>
+        <p className={s.fact}><span>Продолжительность: </span>{beautifyTime(m.duration)}</p>
+        <p className={s.fact}><span>Премьера: </span>{beautifyDate(date, true)}</p>
+        <p className={s.fact}><span>Режиссёр: </span>{m.director}</p>
+        <p className={s.fact}><span>Страна: </span>{m.country}</p>
+      </div>
     </>
   );
 }

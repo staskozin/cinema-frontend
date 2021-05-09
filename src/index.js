@@ -9,6 +9,7 @@ import {
 import Header from './components/Header/Header';
 import MoviesPage from './components/Page/MoviesPage/MoviesPage';
 import MoviePage from './components/Page/MoviePage/MoviePage';
+import ShowtimePage from './components/Page/ShowtimePage/ShowtimePage';
 import Footer from './components/Footer/Footer';
 
 import 'normalize.css';
@@ -18,6 +19,7 @@ ReactDOM.render(
   <Router>
     <Header />
     <Switch>
+      <Route path="/showtime/:showtime_id" component={ShowtimePage} />
       <Route path="/movie/:movie_id" component={MoviePage} />
       <Route path="/contacts">
         <h1>Как добраться</h1>
