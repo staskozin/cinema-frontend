@@ -8,6 +8,7 @@ export default function YouTube(props) {
       <iframe
         src={`https://www.youtube.com/embed/${props.youtubeId}`}
         frameBorder="0"
+        allow="fullscreen;"
       />
     </div>
   )
