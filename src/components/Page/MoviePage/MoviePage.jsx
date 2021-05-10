@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import s from './MoviePage.scss';
 
 import Poster from '../../Poster';
+import Trailer from './Trailer';
 import ShowtimeList from './ShowtimeList';
 
 import { beautifyDate, beautifyTime } from '../../../lib/dates';
@@ -25,6 +26,7 @@ export default function MoviePage(props) {
         poster={m.poster}
         age_restriction={m.age_restriction}
       />
+      <Trailer youtubeId={m.youtube_trailer} />
       <ShowtimeList movie_id={props.match.params.movie_id} />
       <div className={s.descriptionwrap}>
         <h2 className={s.header}>Описание</h2>
