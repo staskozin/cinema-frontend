@@ -6,6 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 
+import ScrollToTop from './components/Misc/ScrollToTop';
 import Header from './components/Header/Header';
 import MoviesPage from './components/Page/MoviesPage/MoviesPage';
 import MoviePage from './components/Page/MoviePage/MoviePage';
@@ -17,6 +18,7 @@ import './index.scss';
 
 ReactDOM.render(
   <Router>
+    <ScrollToTop />
     <Header />
     <Switch>
       <Route path="/showtime/:showtime_id" component={ShowtimePage} />
