@@ -8,7 +8,7 @@ import s from './Footer.scss';
 export default function Movie(props) {
   const m = props.data;
   return (
-    <footer className={s.footer}>
+    <footer id="footer" className={s.footer}>
       Сайт создал <a href="https://staskozin.ru">Станислав Козин</a> в&nbsp;2021&nbsp;году
     </footer>
   );

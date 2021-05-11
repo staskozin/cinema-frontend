@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+import Sticky from 'react-stickynode';
+
 import s from './MoviePage.scss';
 
 import Poster from '../../Poster';
 import Trailer from './Trailer';
 import ShowtimeList from './ShowtimeList';
-
-import { beautifyDate, beautifyTime } from '../../../lib/dates';
+import MovieDescription from './MovieDescription';
 
 export default function MoviePage(props) {
   const [m, setMovie] = useState({});
@@ -17,25 +18,22 @@ export default function MoviePage(props) {
       .then(r => setMovie(r))
   }, []);
 
-  const date = new Date(m?.premiere_date);
   return (
     <>
       <h1 dangerouslySetInnerHTML={{ '__html': `${m.movie_name}` }}></h1>
-      <Poster
-        movie_name={m.movie_name}
-        poster={m.poster}
-        age_restriction={m.age_restriction}
-      />
-      <Trailer youtubeId={m.youtube_trailer} />
-      <ShowtimeList movie_id={props.match.params.movie_id} />
-      <div className={s.descriptionwrap}>
-        <h2 className={s.header}>Описание</h2>
-        <p className={s.description} dangerouslySetInnerHTML={{ __html: `${m.description}` }}></p>
-        <p className={s.fact}><span>Жанр: </span>{m.genre}</p>
-        <p className={s.fact}><span>Продолжительность: </span>{beautifyTime(m.duration)}</p>
-        <p className={s.fact}><span>Премьера: </span>{beautifyDate(date, true)}</p>
-        <p className={s.fact}><span>Режиссёр: </span>{m.director}</p>
-        <p className={s.fact}><span>Страна: </span>{m.country}</p>
+      <div id="#content" className={s.wrap}>
+        <Sticky enabled={window.screen.width >= 768} top={24}>
+          <Poster
+            movie_name={m.movie_name}
+            poster={m.poster}
+            age_restriction={m.age_restriction}
+          />
+          <Trailer youtubeId={m.youtube_trailer} />
+        </Sticky>
+        <div>
+          <ShowtimeList class={s.showtimes} movie_id={props.match.params.movie_id} />
+          <MovieDescription class={s.description} data={m} />
+        </div>
       </div>
     </>
   );
