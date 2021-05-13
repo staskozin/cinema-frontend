@@ -21,8 +21,8 @@ ReactDOM.render(
     <ScrollToTop />
     <Header />
     <Switch>
-      <Route path="/showtime/:showtime_id" component={ShowtimePage} />
-      <Route path="/movie/:movie_id" component={MoviePage} />
+      <Route path="/showtime-:showtime_id" component={ShowtimePage} />
+      <Route path="/movie-:movie_id" component={MoviePage} />
       <Route path="/contacts">
         <h1>Как добраться</h1>
       </Route>
