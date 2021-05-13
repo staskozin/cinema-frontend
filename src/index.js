@@ -14,7 +14,7 @@ import ShowtimePage from './components/Page/ShowtimePage/ShowtimePage';
 import Footer from './components/Footer/Footer';
 
 import 'normalize.css';
-import './index.scss';
+import './style/index.scss';
 
 ReactDOM.render(
   <Router>

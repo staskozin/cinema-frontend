@@ -1,3 +1,5 @@
+@use '../../../style/colors';
+
 .header {
   font-weight: 900;
   font-size: 24px;
@@ -28,12 +30,12 @@
   }
 
   &__price {
-    color: #e5e5e5;
+    color: colors.$text;
   }
 }
 
 div.day__showtime {
-  color: #7e7e7e;
+  color: colors.$link-disabled;
 }
 
 @media screen and (min-width: 768px) {
