@@ -19,10 +19,8 @@ export default function Movie(props) {
           poster={m.poster}
           age_restriction={m.age_restriction}
         />
+        <h2 className={s.movie__name} dangerouslySetInnerHTML={{ '__html': `${m.movie_name}` }}></h2>
       </Link>
-      <h2 className={s.movie__name}>
-        <Link to={`/movie-${m.movie_id}`} dangerouslySetInnerHTML={{ '__html': `${m.movie_name}` }}></Link>
-      </h2>
       <ul className={s.movie__description}>
         <li>{m.genre}</li>
         <li>продолжительность — {beautifyTime(m.duration)}</li>

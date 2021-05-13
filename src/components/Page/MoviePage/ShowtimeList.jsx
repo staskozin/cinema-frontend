@@ -19,7 +19,7 @@ function renderShowtimeList(showtimeList) {
               const date = new Date(sh.showtime_date);
               return (
                 today < date ?
-                  <Link to={`/showtime-${sh.showtime_id}`} className={`${s.day__showtime} ${s.day__showtime_link}`} key={sh.showtime_id}>
+                  <Link to={`/showtime-${sh.showtime_id}`} className={`${s.day__showtime}`} key={sh.showtime_id}>
                     <span className={s.day__time}>{`${date.getHours()}:${date.getMinutes()}`}</span><br />
                     <span className={s.day__price}>{sh.price} ₽</span>
                   </Link>

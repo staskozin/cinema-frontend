@@ -23,6 +23,11 @@
 
 .selected {
   color: #e5e5e5;
+  cursor: default;
+
+  &:hover {
+    color: #e5e5e5;
+  }
 }
 
 @media screen and (min-width: 768px) {
