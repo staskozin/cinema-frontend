@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import s from './Movie.scss';
 
 import Poster from '../../Poster';
-import Button from '../../Button';
 
 import { beautifyDate, beautifyTime as beautifyTime } from '../../../lib/dates';
 
@@ -26,9 +25,6 @@ export default function Movie(props) {
         <li>продолжительность — {beautifyTime(m.duration)}</li>
         <li>в кино с {beautifyDate(date)}</li>
       </ul>
-      <Link to={`/movie-${m.movie_id}`}>
-        <Button text='Посмотреть сеансы' />
-      </Link>
     </div>
   );
 }
