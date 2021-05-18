@@ -12,6 +12,12 @@ export function beautifyTime(time) {
   return '';
 }
 
+export function getTimeFromDate(date) {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`
+}
+
 export function getDateWithWeekday(date) {
   const weekdays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
   return `${weekdays[date.getDay()]}, ${beautifyDate(date)}`;
