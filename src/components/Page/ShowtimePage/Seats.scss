@@ -1,7 +1,11 @@
 .wrap {
   overflow-x: scroll;
-  display: flex;
-  flex-wrap: wrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .row {
