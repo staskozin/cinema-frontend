@@ -1,0 +1,31 @@
+@use '../../../style/colors';
+
+.seat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border: none;
+  border-radius: 7px;
+  background-color: colors.$seat-available;
+  color: colors.$seat-available-text;
+  font-size: 24px;
+  margin-right: 16px;
+
+  &_selected {
+    background-color: colors.$seat-selected;
+    color: colors.$seat-selected-text;
+  }
+
+  &_disabled {
+    background-color: colors.$seat-disabled;
+    color: colors.$seat-disabled-text;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

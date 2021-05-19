@@ -1,0 +1,15 @@
+.wrap {
+  overflow-x: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  margin: auto;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
