@@ -1,0 +1,23 @@
+@use '../style/colors';
+
+.wrap {
+  display: block;
+  margin-top: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input {
+  padding: 15px 8px 14px;
+  border: none;
+  border-radius: 7px;
+  background-color: colors.$text-input-background;
+  color: colors.$text-input-text;
+  box-sizing: border-box;
+  width: 300px;
+  margin-bottom: 24px;
+  outline: none;
+}

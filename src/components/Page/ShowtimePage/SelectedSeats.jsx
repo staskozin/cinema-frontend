@@ -4,7 +4,6 @@ import s from './SelectedSeats.scss';
 
 import { getTimeFromDate, getDateWithWeekdayAccusative } from '../../../lib/dates';
 
-
 function renderRowsAndSeats(seats) {
   const rows = {};
   seats.forEach(elem => {
