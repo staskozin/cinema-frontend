@@ -22,3 +22,8 @@ export function getDateWithWeekday(date) {
   const weekdays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
   return `${weekdays[date.getDay()]}, ${beautifyDate(date)}`;
 }
+
+export function getDateWithWeekdayAccusative(date) {
+  const weekdays = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+  return `${weekdays[date.getDay()]}, ${beautifyDate(date)}`;
+}

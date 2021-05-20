@@ -18,7 +18,7 @@ export default function Seat(props) {
       onClick={() => {
         if (seat.seat_status_id === 1) {
           setIsSelected(!isSelected);
-          !isSelected ? props.add(seat.seat_id) : props.remove(seat.seat_id);
+          !isSelected ? props.add(seat) : props.remove(seat.seat_id);
         }
       }}
     >
