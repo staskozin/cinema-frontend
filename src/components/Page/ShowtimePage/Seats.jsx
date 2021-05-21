@@ -9,7 +9,9 @@ export default function Seats(props) {
 
   return (
     <>
+
       <div className={s.wrap}>
+        <div className={s.screen}>Э К Р А Н</div>
         {seats?.map(row => {
           return (
             <div className={s.row} key={row[0].seat_row}>

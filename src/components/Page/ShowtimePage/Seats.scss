@@ -1,13 +1,20 @@
+@use '../../../style/colors';
+
 .wrap {
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   margin-bottom: 24px;
   padding-right: 36px;
+}
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  background-color: colors.$text;
+  color: colors.$text-input-text;
+  width: 512px;
+  margin-bottom: 16px;
+  border-radius: 8px;
 }
 
 .row {
