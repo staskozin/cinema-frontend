@@ -13,7 +13,8 @@ import Button from '../../Button';
 export default function ShowtimePage(props) {
   const [sh, setShowtime] = useState({});
   const [selectedSeats, setSelectedSeats] = useState([]);
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phone, setPhone] = useState('');
+  const [isSending, setIsSending] = useState(false);
 
   const addSeat = seat => {
     setSelectedSeats([...selectedSeats, seat])
@@ -23,16 +24,29 @@ export default function ShowtimePage(props) {
     setSelectedSeats(selectedSeats.filter(seat => seat.seat_id !== seat_id))
   };
 
-  const changePhoneNumber = phone => {
-    console.log(phone)
-    setPhoneNumber(phone);
+  const changePhoneNumber = p => {
+    setPhone(p);
   };
 
   const sendReservationInfo = () => {
-    console.log({
+    if (isSending) return;
+    setIsSending(true);
+    const data = {
       seats: selectedSeats.map(e => e.seat_id),
-      phone: phoneNumber
+      phone: phone,
+      showtime_id: sh.showtime_id
+    }
+    fetch(`https://cinema-api.staskozin.ru/reserve`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     })
+      .then(r => {
+        setIsSending(false);
+        window.location = '/';
+      });
   };
 
   useEffect(() => {
@@ -62,7 +76,7 @@ export default function ShowtimePage(props) {
       </div>
       <div className={s.rightCol}>
         <TextInput label='Номер телефона' change={changePhoneNumber} placeholder='+7 123 456-78-90' />
-        <Button text='Забронировать' callback={() => { sendReservationInfo() }} />
+        <Button text='Забронировать' callback={() => { sendReservationInfo() }} disabled={!(selectedSeats.length && phone) || isSending} />
       </div>
     </>
   );

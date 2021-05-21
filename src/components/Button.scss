@@ -8,4 +8,10 @@
   border: none;
   border-radius: 7px;
   width: 300px;
+  transition: color, background-color 0.33s ease-out;
+
+  &:disabled {
+    color: colors.$button-disabled-text;
+    background-color: colors.$button-disabled;
+  }
 }
