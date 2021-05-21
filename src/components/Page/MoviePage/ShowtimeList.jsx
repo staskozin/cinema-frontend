@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import s from './ShowtimeList.scss';
 
-import { getDateWithWeekday } from '../../../lib/dates';
+import { getDateWithWeekday, getTimeFromDate } from '../../../lib/dates';
 
 function renderShowtimeList(showtimeList) {
   const grouped = groupShowtimes(showtimeList);
@@ -20,12 +20,12 @@ function renderShowtimeList(showtimeList) {
               return (
                 today < date ?
                   <Link to={`/showtime-${sh.showtime_id}`} className={`${s.day__showtime}`} key={sh.showtime_id}>
-                    <span className={s.day__time}>{`${date.getHours()}:${date.getMinutes()}`}</span><br />
+                    <span className={s.day__time}>{getTimeFromDate(date)}</span><br />
                     <span className={s.day__price}>{sh.price} ₽</span>
                   </Link>
                   :
                   <div className={s.day__showtime} key={sh.showtime_id}>
-                    <span className={s.day__time}>{`${date.getHours()}:${date.getMinutes()}`}</span><br />
+                    <span className={s.day__time}>{getTimeFromDate(date)}</span><br />
                     <span className={s.day__price}>{sh.price} ₽</span>
                   </div>
               )
