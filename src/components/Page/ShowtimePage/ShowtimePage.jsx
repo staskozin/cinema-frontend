@@ -76,6 +76,7 @@ export default function ShowtimePage(props) {
             price={sh.price}
             start_date={start_date}
             end_date={end_date}
+            hall_name={sh.hall_name}
           />
           <TextInput label='Номер телефона' change={changePhoneNumber} placeholder='+7 123 456-78-90' />
           <Button text='Забронировать' callback={() => { sendReservationInfo() }} disabled={!(selectedSeats.length && phone) || isSending} />

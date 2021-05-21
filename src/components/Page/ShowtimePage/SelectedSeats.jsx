@@ -16,7 +16,7 @@ function renderRowsAndSeats(seats) {
   Object.keys(rows).sort().forEach((r, i) => {
     result.push(<>
       <span className={s.bold}>{r}</span> ряд — &nbsp;
-      <span className={s.bold}>{rows[r].sort().join(', ')} {rows[r].length === 1 ? 'место' : 'места'}</span>
+      <span className={s.bold}>{rows[r].sort().join(', ')}</span> {rows[r].length === 1 ? 'место' : 'места'}
       {i !== rows.length - 1 ? <br /> : null}
     </>);
   });
@@ -25,12 +25,14 @@ function renderRowsAndSeats(seats) {
 }
 
 export default function SelectedSeats(props) {
-  const { selectedSeats, price, start_date, end_date } = props;
+  const { selectedSeats, price, start_date, end_date, hall_name } = props;
   return (
     selectedSeats?.length ?
       <>
         <p className={s.selectedSeats}>
           Вы выбрали
+          <br />
+          {hall_name}
           <br />
           {renderRowsAndSeats(selectedSeats)}
           на сумму <span className={s.bold}>{selectedSeats.length * price} ₽</span>

@@ -26,6 +26,7 @@ export default function ReservationPage(props) {
         price={reservation.price}
         start_date={start_date}
         end_date={end_date}
+        hall_name={reservation.hall_name}
       />
       <p>На телефон <span className={s.bold}>{reservation.phone}</span> придёт СМС с информацией о бронировании.</p>
       <Link to="/">Вернуться к списку фильмов</Link>
