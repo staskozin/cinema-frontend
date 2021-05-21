@@ -8,6 +8,7 @@ import {
 
 import ScrollToTop from './components/Misc/ScrollToTop';
 import Header from './components/Header/Header';
+import ContactsPage from './components/Page/ContactsPage/ContactsPage';
 import MoviesPage from './components/Page/MoviesPage/MoviesPage';
 import MoviePage from './components/Page/MoviePage/MoviePage';
 import ShowtimePage from './components/Page/ShowtimePage/ShowtimePage';
@@ -26,7 +27,7 @@ ReactDOM.render(
       <Route path="/showtime-:showtime_id" component={ShowtimePage} />
       <Route path="/movie-:movie_id" component={MoviePage} />
       <Route path="/contacts">
-        <h1>Как добраться</h1>
+        <ContactsPage />
       </Route>
       <Route path="/">
         <MoviesPage />
