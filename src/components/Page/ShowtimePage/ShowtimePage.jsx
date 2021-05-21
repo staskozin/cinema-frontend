@@ -61,7 +61,7 @@ export default function ShowtimePage(props) {
     <>
       <div className={s.leftCol}>
         <Link to={`/movie-${sh.movie_id}`}>
-          <h1>{sh.movie_name}, {sh.age_restriction}+</h1>
+          <h1 dangerouslySetInnerHTML={{'__html': `${sh.movie_name}, ${sh.age_restriction}+`}}></h1>
         </Link>
         <time className={s.date} dateTime={sh.showtime_date}>
           {getDateWithWeekday(start_date)}, {getTimeFromDate(start_date)}&ndash;{getTimeFromDate(end_date)}
