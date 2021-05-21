@@ -1,0 +1,9 @@
+@use '../../../style/colors';
+
+.header {
+  color: colors.$seat-selected;
+}
+
+.bold {
+  font-weight: 700;
+}

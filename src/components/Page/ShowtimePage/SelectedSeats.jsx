@@ -27,7 +27,7 @@ function renderRowsAndSeats(seats) {
 export default function SelectedSeats(props) {
   const { selectedSeats, price, start_date, end_date } = props;
   return (
-    selectedSeats.length ?
+    selectedSeats?.length ?
       <>
         <p className={s.selectedSeats}>
           Вы выбрали

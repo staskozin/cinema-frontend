@@ -11,6 +11,7 @@ import Header from './components/Header/Header';
 import MoviesPage from './components/Page/MoviesPage/MoviesPage';
 import MoviePage from './components/Page/MoviePage/MoviePage';
 import ShowtimePage from './components/Page/ShowtimePage/ShowtimePage';
+import ReservationPage from './components/Page/ReservationPage/ReservationPage';
 import Footer from './components/Footer/Footer';
 
 import 'normalize.css';
@@ -21,6 +22,7 @@ ReactDOM.render(
     <ScrollToTop />
     <Header />
     <Switch>
+      <Route path="/reservation-:reservation_id" component={ReservationPage} />
       <Route path="/showtime-:showtime_id" component={ShowtimePage} />
       <Route path="/movie-:movie_id" component={MoviePage} />
       <Route path="/contacts">

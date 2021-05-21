@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import s from './ShowtimePage.scss';
 
-import { getDateWithWeekday, getTimeFromDate, getDateWithWeekdayAccusative } from '../../../lib/dates';
+import { getDateWithWeekday, getTimeFromDate } from '../../../lib/dates';
 
 import Seats from './Seats';
 import SelectedSeats from './SelectedSeats';
@@ -43,9 +43,10 @@ export default function ShowtimePage(props) {
       },
       body: JSON.stringify(data)
     })
+      .then(r => r.json())
       .then(r => {
         setIsSending(false);
-        window.location = '/';
+        window.location = `/reservation-${r.reservation_id}`;
       });
   };
 
