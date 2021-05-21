@@ -59,24 +59,26 @@ export default function ShowtimePage(props) {
   const end_date = new Date(sh.showtime_end_date);
   return (
     <>
-      <div className={s.leftCol}>
-        <Link to={`/movie-${sh.movie_id}`}>
-          <h1 dangerouslySetInnerHTML={{'__html': `${sh.movie_name}, ${sh.age_restriction}+`}}></h1>
-        </Link>
-        <time className={s.date} dateTime={sh.showtime_date}>
-          {getDateWithWeekday(start_date)}, {getTimeFromDate(start_date)}&ndash;{getTimeFromDate(end_date)}
-        </time>
-        <Seats seats={sh.seats} add={addSeat} remove={removeSeat} />
-        <SelectedSeats
-          selectedSeats={selectedSeats}
-          price={sh.price}
-          start_date={start_date}
-          end_date={end_date}
-        />
-      </div>
-      <div className={s.rightCol}>
-        <TextInput label='Номер телефона' change={changePhoneNumber} placeholder='+7 123 456-78-90' />
-        <Button text='Забронировать' callback={() => { sendReservationInfo() }} disabled={!(selectedSeats.length && phone) || isSending} />
+      <Link to={`/movie-${sh.movie_id}`}>
+        <h1 dangerouslySetInnerHTML={{ '__html': `${sh.movie_name}, ${sh.age_restriction}+` }}></h1>
+      </Link>
+      <time className={s.date} dateTime={sh.showtime_date}>
+        {getDateWithWeekday(start_date)}, {getTimeFromDate(start_date)}&ndash;{getTimeFromDate(end_date)}
+      </time>
+      <div className={s.wrap}>
+        <div className={s.leftCol}>
+          <Seats seats={sh.seats} add={addSeat} remove={removeSeat} />
+        </div>
+        <div className={s.rightCol}>
+          <SelectedSeats
+            selectedSeats={selectedSeats}
+            price={sh.price}
+            start_date={start_date}
+            end_date={end_date}
+          />
+          <TextInput label='Номер телефона' change={changePhoneNumber} placeholder='+7 123 456-78-90' />
+          <Button text='Забронировать' callback={() => { sendReservationInfo() }} disabled={!(selectedSeats.length && phone) || isSending} />
+        </div>
       </div>
     </>
   );
