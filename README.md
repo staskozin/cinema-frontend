@@ -4,6 +4,8 @@
 
 Написан на React. Сборка через Webpack.
 
+[Репозиторий с бэкендом](https://github.com/staskozin/cinema-backend)
+
 ## Список фильмов
 ![Список фильмов](readme/movies.png)
 
