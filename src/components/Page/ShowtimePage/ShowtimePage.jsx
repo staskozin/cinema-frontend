@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import s from './ShowtimePage.scss';
 
@@ -15,6 +15,7 @@ export default function ShowtimePage(props) {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [phone, setPhone] = useState('');
   const [isSending, setIsSending] = useState(false);
+  const history = useHistory();
 
   const addSeat = seat => {
     setSelectedSeats([...selectedSeats, seat])
@@ -46,7 +47,7 @@ export default function ShowtimePage(props) {
       .then(r => r.json())
       .then(r => {
         setIsSending(false);
-        window.location = `/reservation-${r.reservation_id}`;
+        history.push(`/reservation-${r.reservation_id}`);
       });
   };
 
